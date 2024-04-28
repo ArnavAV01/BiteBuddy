@@ -15,7 +15,7 @@ BiteBuddy is a chatbot developed using Dialogueflow, aimed at simplifying the or
 ## Technologies Used
 
 - **Dialogueflow**: BiteBuddy is developed on the Dialogueflow platform for natural language processing and conversation management.
-- **FastAPI**: The backend of BiteBuddy is built using FastAPI, a modern, fast (high-performance), web framework for building APIs with Python 3.7+.
+- **FastAPI**: The backend of BiteBuddy is built using FastAPI, a modern, fast (high-performance), web framework for building APIs with Python 3.11.0.
 - **MySQL Connector**: MySQL Connector is used to establish a connection with the database for storing order information.
 
 ## Development
