@@ -15,16 +15,18 @@ async def handle_request(request: Request):
 
     # Extract the necessary information from the payload
     # based on the structure of the WebhookRequest from Dialogflow
+
     intent = payload['queryResult']['intent']['displayName']
     parameters = payload['queryResult']['parameters']
     output_contexts = payload['queryResult']['outputContexts']
     session_id = generic_helper.extract_session_id(output_contexts[0]["name"])
 
     intent_handler_dict = {
+        'new.order': new_order,
         'order.add context: ongoing-order': add_to_order,
         'order.remove - context: ongoing-order': remove_from_order,
-        'order.complete context: ongoing-order': complete_order,
-        'track.order context: ongoing-order': track_order
+        'order.complete - context: ongoing-order': complete_order,
+        'track.order - context: ongoing-tracking': track_order
     }
 
     return intent_handler_dict[intent](parameters, session_id)
@@ -70,11 +72,17 @@ def complete_order(parameters: dict, session_id: str):
         "fulfillmentText": fulfillment_text
     })
 
+def new_order(parameters: dict, session_id: str):
+    inprogress_orders[session_id] = {}
+    return JSONResponse(content={
+        "fulfillmentText": "Okk What you want to have?"
+    })
 
 def add_to_order(parameters: dict, session_id: str):
+
     food_items = parameters["food-item"]
     quantities = parameters["number"]
-
+    
     if len(food_items) != len(quantities):
         fulfillment_text = "Sorry I didn't understand. Can you please specify food items and quantities clearly?"
     else:
