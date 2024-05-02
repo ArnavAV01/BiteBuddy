@@ -63,6 +63,8 @@ frontend: website code
 
 NOTE: ngrok can timeout. you need to restart the session if you see session expired message.
 
+### Screenshot
+![chat_ss](https://github.com/ARieS15AV/BiteBuddy/blob/main/bitebuddy.png)
 
 ## Contributors
 
