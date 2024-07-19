@@ -69,5 +69,3 @@ NOTE: ngrok can timeout. you need to restart the session if you see session expi
 ## Contributors
 
 - **Arnav A Verma**
-
-We hope BiteBuddy enhances your dining experience at Pandey Ji Fresh and Delicious! If you have any feedback or encounter any issues, feel free to reach out to [your contact information]. Enjoy your meal! 🍔🥗🍕
